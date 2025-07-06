@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>AmorSync - Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="hearts-bg"></div>
+  <button class="back-btn" onclick="window.location.href='index.html'">&larr; Voltar</button>
+  <main>
+    <div class="auth-card">
+      <h1 class="brand-title">AmorSync</h1>
+      <p class="brand-subtitle">"Bem-vindo(a) de volta!"</p>
+      <form id="loginForm" autocomplete="off">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seu@email.com" required>
+        <label for="password">Senha</label>
+        <input type="password" id="password" placeholder="Sua senha" required>
+        <button type="submit" class="main-btn">Entrar</button>
+        <div class="forgot-area">
+          <a href="#" id="showForgot">Esqueceu a senha?</a>
+        </div>
+      </form>
+      <div class="divider"><span>ou</span></div>
+      <button class="google-btn"><img src="assets/google.svg" alt="Google"> Entrar com Google</button>
+      <p class="bottom-link">Não tem conta? <a href="#" id="showRegister">Criar Conta</a></p>
+    </div>
+  </main>
+
+  <!-- Modal Cadastro -->
+  <div class="modal-bg" id="modalRegister">
+    <div class="modal-box">
+      <button class="close-modal" data-close="modalRegister">&times;</button>
+      <h2 class="modal-title">Criar Conta</h2>
+      <form id="registerForm" autocomplete="off">
+        <label for="regNome">Nome Completo:</label>
+        <input type="text" id="regNome" placeholder="Seu nome completo" required>
+        <label for="regEmail">Seu E-mail:</label>
+        <input type="email" id="regEmail" placeholder="Ex: seu@email.com" required>
+        <label for="regSenha">Crie uma Senha:</label>
+        <input type="password" id="regSenha" placeholder="Mínimo de 6 caracteres" minlength="6" required>
+        <label for="regSenha2">Confirme a Senha:</label>
+        <input type="password" id="regSenha2" placeholder="Repita a senha criada" required>
+        <button type="submit" class="main-btn">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Recuperar Senha -->
+  <div class="modal-bg" id="modalForgot">
+    <div class="modal-box">
+      <button class="close-modal" data-close="modalForgot">&times;</button>
+      <h2 class="modal-title">Recuperar Senha</h2>
+      <p class="modal-subtitle">Sem problemas, acontece!</p>
+      <form id="forgotForm" autocomplete="off">
+        <label for="forgotEmail">E-mail Cadastrado</label>
+        <input type="email" id="forgotEmail" placeholder="Digite seu e-mail" required>
+        <button type="submit" class="main-btn">Enviar Link de Recuperação</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="hearts.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
