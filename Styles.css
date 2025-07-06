@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap');
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffeaf5;
+  font-family: 'Quicksand', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hearts-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Animating hearts */
+.heart {
+  position: absolute;
+  font-size: 2.4rem;
+  color: #ff6392;
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 8px #ff639244);
+  animation: heartPopFade var(--duration,6s) ease forwards;
+}
+@keyframes heartPopFade {
+  0%   { opacity: 0;   transform: scale(0.6) translateY(10px) rotate(-14deg);}
+  14%  { opacity: 0.72;transform: scale(1.1) translateY(-7px) rotate(3deg);}
+  80%  { opacity: 0.31;transform: scale(1.08) translateY(-28px) rotate(8deg);}
+  100% { opacity: 0;   transform: scale(1.18) translateY(-60px) rotate(11deg);}
+}
